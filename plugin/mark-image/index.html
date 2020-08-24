@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarkImage</title>
+  <style>
+    .container {
+      width: 800px;
+      height: 600px;
+    }
+
+    canvas {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container"></div>
+  <button onclick="markImage.zoomIn()">放大</button>
+  <button onclick="markImage.zoomOut()">缩小</button>
+  <button onclick="markImage.fitting()">适配</button>
+  <button onclick="markImage.setAutoLock()">移动</button>
+  <input type="text" id="num" placeholder="请输入删除选区的索引">
+  <button onclick="markImage.remove(document.querySelector('#num').value)">删除</button>
+</body>
+<script src="./MarkImage.js"></script>
+<script>
+  const markImage = new MarkImage({
+    el: '.container',
+    imageSrc: './test.jpg',
+    showLabel: true, // 默认为true
+    showPix: true, // 默认为true
+    data: [
+      [461, 348, 573, 467],
+      [922, 351, 1019, 469],
+      [683, 51, 792, 162],
+      [31, 663, 187, 799],
+      [656, 677, 797, 812],
+      [41, 139, 173, 244],
+      [842, 682, 991, 846],
+    ],
+    onSelect(index, coor) {
+      console.log(index, coor)
+    },
+    onResult(list) {
+      console.log(list)
+    }
+  })
+
+</script>
+
+</html>
