@@ -24,7 +24,7 @@
 </head>
 
 <body>
-  <div class="container"></div>
+  <div class="container">加载中...</div>
   <button onclick="markImage.zoomIn()">放大</button>
   <button onclick="markImage.zoomOut()">缩小</button>
   <button onclick="markImage.fitting()">适配</button>
@@ -49,6 +49,7 @@
       [41, 139, 173, 244],
       [842, 682, 991, 846],
     ],
+    onLoad() {},
     onSelect(index, coor) {
       console.log(index, coor)
     },

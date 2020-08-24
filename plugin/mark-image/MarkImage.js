@@ -6,7 +6,8 @@ class MarkImage {
     this.showLabel = true
     this.showPix = true
     this.data = []
-    this.onSelect = Function
+    this.onLoad = Function
+    this.onResult = Function
     this.onResult = Function
     Object.assign(this, options)
     this.dataset = this.data.map((x, i) => ({
@@ -96,6 +97,7 @@ class MarkImage {
       this.IMAGE_ORIGIN_WIDTH = this.IMAGE_WIDTH = this.image.width
       this.IMAGE_ORIGIN_HEIGHT = this.IMAGE_HEIGHT = this.image.height
       this.fitting()
+      this.onLoad()
     })
     this.canvas.addEventListener('mousedown', (e) => {
       if (this.selectedRect && this.isHitCtrl(e) > -1) {

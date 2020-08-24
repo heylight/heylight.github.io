@@ -31,6 +31,7 @@
        [41, 139, 173, 244],
        [842, 682, 991, 846],
     ],
+    onLoad(){},                        // 图片加载完成
     onSelect(index, coor) {            // 输出当前选中的标注矩形，参数 index为索引,coor为坐标
       console.log(index,coor)
     },          
