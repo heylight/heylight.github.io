@@ -11,6 +11,11 @@
       height: 600px;
     }
 
+    .on {
+      background-color: #f00;
+      color: #fff;
+    }
+
     canvas {
       background-color: rgba(0, 0, 0, 0.3);
     }
@@ -23,9 +28,10 @@
   <button onclick="markImage.zoomIn()">放大</button>
   <button onclick="markImage.zoomOut()">缩小</button>
   <button onclick="markImage.fitting()">适配</button>
-  <button onclick="markImage.setAutoLock()">移动</button>
+  <button id="sw" onclick="swichLock()">平移</button id="sw">
   <input type="text" id="num" placeholder="请输入删除选区的索引">
   <button onclick="markImage.remove(document.querySelector('#num').value)">删除</button>
+  <div>(打开控制台查看数据输出)</div>
 </body>
 <script src="./MarkImage.js"></script>
 <script>
@@ -50,6 +56,20 @@
       console.log(list)
     }
   })
+
+  function swichLock() {
+    markImage.setAutoLock((type) => {
+      const sw = document.querySelector('#sw')
+      if (type) {
+        sw.classList.remove('on')
+        sw.innerText = '平移'
+      } else {
+        sw.classList.add('on')
+        sw.innerText = '锁定'
+      }
+    })
+
+  }
 
 </script>
 

@@ -84,8 +84,9 @@ class MarkImage {
       [x1, (y2 - y1) / 2 + y1]
     ]
   }
-  setAutoLock() {
+  setAutoLock(cb = Function) {
     this.lockImage = !this.lockImage
+    cb(this.lockImage)
     this.setCursor()
   }
   // 设置监听事件
