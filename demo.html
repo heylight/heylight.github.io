@@ -8,7 +8,7 @@
   <style>
     .box {
       position: relative;
-      width: 500px;
+      width: 100vw;
       height: 400px;
       margin: 0 auto;
     }
@@ -37,16 +37,17 @@
   <button onclick="start()">启用</button>
 </body>
 <script>
+  let box = document.querySelector('.box')
   let myvideo = document.querySelector('video')
   let btn = document.querySelector('button')
-  let MediaStream
+
 
   function start() {
     navigator.mediaDevices
       .getUserMedia({
         audio: false,
         video: {
-          width: 500,
+          width: box.clientWidth,
           height: 400
         }
       })
