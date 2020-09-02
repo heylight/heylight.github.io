@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>jd test</title>
+  <style>
+    .box {
+      position: relative;
+      width: 500px;
+      height: 400px;
+      margin: 0 auto;
+    }
+
+    .border {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border: 1px solid #f00;
+      top: 50%;
+      left: 50%;
+      margin-left: -100px;
+      margin-top: -100px;
+      color: #f00;
+      padding-left: 10px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <video autoplay></video>
+    <div class="border">jd</div>
+  </div>
+  <button onclick="start()">启用</button>
+</body>
+<script>
+  let myvideo = document.querySelector('video')
+  let btn = document.querySelector('button')
+  let MediaStream
+
+  function start() {
+    navigator.mediaDevices
+      .getUserMedia({
+        audio: false,
+        video: {
+          width: 500,
+          height: 400
+        }
+      })
+      .then((stream) => {
+        myvideo.srcObject = stream;
+      });
+  }
+
+</script>
+
+</html>
