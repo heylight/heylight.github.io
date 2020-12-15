@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ""
+title: 朱海亮的博客
+subtitle: "随便写点啥吧"
 description: ""
 keywords:
-author: John Doe
+author: 朱海亮
 language: zh-CN
 timezone: ""
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://zhuhailiang.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
