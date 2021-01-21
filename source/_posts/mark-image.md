@@ -29,6 +29,12 @@ tags:
 </script>
 ```
 
+or
+
+```
+npm i mark-image
+```
+
 ```js
 import MarkImage from "mark-image";
 // ...
